@@ -67,21 +67,20 @@ def next_fibonacci_keyboard():
 
 
 
-def is_integer_keyboard():
-    n = input("Enter a number to check if it's an integer: ")
+def is_integer_keyboard(n):
     try:
         int(n)
-        print(f"{n} is an integer.")
+        return f"{n} is an integer."
     except ValueError:
-        print(f"{n} is not an integer.")
+        return f"{n} is not an integer."
 
-def fibonacci_numbers_keyboard():
-    numbers = input("Enter a series of numbers separated by spaces to check which ones are in the Fibonacci sequence: ").split()
-    numbers = [int(n) for n in numbers]
+def fibonacci_numbers_keyboard(numbers):
+    numbers = [int(n) for n in numbers.split()]
     fib_numbers = fibonacci_numbers(numbers)
-    print("The following numbers are in the Fibonacci sequence:")
+    output = "The following numbers are in the Fibonacci sequence:\n"
     for n in fib_numbers:
-        print(n)
+        output += str(n) + "\n"
+    return output
 
 def is_square_keyboard():
     n = int(input("Enter a number to check if it's a square number: "))
